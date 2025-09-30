@@ -128,7 +128,7 @@ def angular_levels(path, niveles=(np.e**-1, 0.5, 0.1, 0.01),
 
     return resultados
 
-# ========================== Archivo =================================
+# ========================== Carga de datos =================================
 if __name__ == "__main__":
     path = Path(r"C:\Users\alber\OneDrive\Escritorio\Física Nuclear\TFM\Bibliografía\Láminas delgadas\Estudio dispersión angular\Estudio Oxigeno\Distribución Ang_Oxigeno_Al_4,5MeV_21_tab.lis")
 
@@ -141,9 +141,7 @@ if __name__ == "__main__":
                          lado='derecha',
                          usar_discretizacion=True)
 
-    # ============================================================
-    # En GRADOS
-    # ============================================================
+    # ========================== En GRADOS =======================
     DEG = 180.0/np.pi
     print(f"θ_pico = {res['theta_pico']*DEG:.6g}° ± {res['sigma_theta_pico']*DEG:.3g}°")
     print(f"I_pico = {res['I_pico']:.6g} ± {res['sigma_I_pico']:.3g}")
@@ -154,3 +152,4 @@ if __name__ == "__main__":
         else:
 
             print(f"θ a {f:.5g}·I_pico : no evaluable")
+
