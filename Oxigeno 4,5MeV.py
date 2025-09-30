@@ -43,7 +43,7 @@ def sigma_I_total(theta, I, dtheta, err_percent=None, usar_discretizacion=True):
     else:
         sigma_stat = I * (np.asarray(err_percent) / 100.0)
 
-    # pendiente local dI/dθ
+    # componente por discretización en z
     m = np.zeros_like(I)
     m[1:-1] = (I[2:] - I[:-2]) / (theta[2:] - theta[:-2])
     m[0]    = (I[1]  - I[0])   / (theta[1]  - theta[0])
@@ -152,4 +152,5 @@ if __name__ == "__main__":
         if np.isfinite(th):
             print(f"θ a {f:.5g}·I_pico : {th*DEG:.6g}° ± {sth*DEG:.3g}°")
         else:
+
             print(f"θ a {f:.5g}·I_pico : no evaluable")
